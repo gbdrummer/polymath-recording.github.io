@@ -1,0 +1,1518 @@
+@charset "UTF-8";
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+    line-height: 1.3827882373436318;
+    vertical-align: baseline;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+q, blockquote {
+    quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+    content: '';
+    content: none;
+}
+
+a img {
+    border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
+nav, section, summary {
+    display: block;
+}
+
+input, textarea, button {
+    font-size: inherit;
+    line-height: 1.3827882373436318;
+}
+
+:root {
+}
+@custom-media --min-vp screen and (min-width: 0px) and (max-width: 320px);
+@custom-media --min-vp-and-above screen and (min-width: 0px);
+@custom-media --above-min-vp screen and (min-width: 321px);
+@custom-media --below-tiny-vp screen and (max-width: 319px);
+@custom-media --tiny-vp-and-below screen and (max-width: 320px);
+@custom-media --tiny-vp screen and (min-width: 320px) and (max-width: 512px);
+@custom-media --tiny-vp-and-above screen and (min-width: 320px);
+@custom-media --above-tiny-vp screen and (min-width: 513px);
+@custom-media --below-small-vp screen and (max-width: 511px);
+@custom-media --small-vp-and-below screen and (max-width: 512px);
+@custom-media --small-vp screen and (min-width: 512px) and (max-width: 768px);
+@custom-media --small-vp-and-above screen and (min-width: 512px);
+@custom-media --above-small-vp screen and (min-width: 769px);
+@custom-media --below-medium-vp screen and (max-width: 767px);
+@custom-media --medium-vp-and-below screen and (max-width: 768px);
+@custom-media --medium-vp screen and (min-width: 768px) and (max-width: 1024px);
+@custom-media --medium-vp-and-above screen and (min-width: 768px);
+@custom-media --above-medium-vp screen and (min-width: 1025px);
+@custom-media --below-large-vp screen and (max-width: 1023px);
+@custom-media --large-vp-and-below screen and (max-width: 1024px);
+@custom-media --large-vp screen and (min-width: 1024px) and (max-width: 1200px);
+@custom-media --large-vp-and-above screen and (min-width: 1024px);
+@custom-media --above-large-vp screen and (min-width: 1201px);
+@custom-media --below-huge-vp screen and (max-width: 1199px);
+@custom-media --huge-vp-and-below screen and (max-width: 1200px);
+@custom-media --huge-vp screen and (min-width: 1200px) and (max-width: 1440px);
+@custom-media --huge-vp-and-above screen and (min-width: 1200px);
+@custom-media --above-huge-vp screen and (min-width: 1441px);
+@custom-media --below-massive-vp screen and (max-width: 1439px);
+@custom-media --massive-vp-and-below screen and (max-width: 1440px);
+@custom-media --massive-vp screen and (min-width: 1440px) and (max-width: 1600px);
+@custom-media --massive-vp-and-above screen and (min-width: 1440px);
+@custom-media --above-massive-vp screen and (min-width: 1601px);
+@custom-media --below-null-vp screen and (max-width: 1599px);
+@custom-media --null-vp-and-below screen and (max-width: 1600px);
+@custom-media --null-vp screen and (min-width: 1600px) and (max-width: 2048px);
+@custom-media --null-vp-and-above screen and (min-width: 1600px);
+@custom-media --above-null-vp screen and (min-width: 2049px);
+
+.chassis .hidden, .chassis [hidden] {
+    display: none !important;
+}
+
+.chassis .invisible {
+    visibility: hidden !important;
+}
+
+.chassis .transparent {
+    opacity: 0 !important;
+}
+
+.chassis .text-normal {
+    font-style: normal !important;
+    -webkit-font-feature-settings: normal !important;
+            font-feature-settings: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+}
+
+.chassis .text-italic {
+    font-style: italic !important;
+}
+
+.chassis .text-oblique {
+    font-style: oblique !important;
+}
+
+.chassis .text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.chassis .text-small-caps {
+    -webkit-font-feature-settings: "c2sc" !important;
+            font-feature-settings: "c2sc" !important;
+    font-variant: small-caps !important;
+}
+
+.chassis .text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.chassis .text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.chassis .text-underline {
+    text-decoration: underline !important;
+}
+
+.chassis .text-strikethrough {
+    text-decoration: line-through !important;
+}
+
+.chassis .text-nowrap {
+    white-space: nowrap !important;
+}
+
+.chassis .text-truncate {
+    overflow: hidden !important;
+}
+
+.chassis .text-ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.chassis .constraint.width {
+    width: 100%;
+    min-width: 320px;
+    max-width: 2048px;
+    margin: 0 auto;
+    padding-left: 6.18vw;
+    padding-right: 6.18vw;
+}
+
+@media screen and (max-width: 320px) {
+    .chassis .constraint.width {
+        padding-left: calc(320px * 6.18 / 100);
+        padding-right: calc(320px * 6.18 / 100);
+    }
+}
+
+@media screen and (min-width: 2048px) {
+    .chassis .constraint.width {
+        padding-left: calc(2048px * 6.18 / 100);
+        padding-right: calc(2048px * 6.18 / 100);
+    }
+}
+
+html.chassis {
+    font-size: 16px;
+}
+
+.chassis body {
+    min-width: 320px;
+    font-family: initial;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 'Avenir Next',
+                 Avenir,
+                 Helvetica,
+                 Arial,
+                 sans-serif;
+    color: initial;
+    color: rgb(68, 68, 68);
+}
+
+.chassis h1 {
+    font-size: 1.618033988749895em;
+    line-height: 1.337195101796658;
+    margin-bottom: .8264320225002101em;
+}
+
+.chassis h2 {
+    font-size: 1.272019649514069em;
+    line-height: 1.354610129921921;
+    margin-bottom: .837195101796658em;
+}
+
+.chassis h3 {
+    font-size: 1em;
+    line-height: 1.3827882373436318;
+    margin-bottom: .854610129921921em;
+}
+
+.chassis h4 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis h5 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis h6 {
+    font-size: .7861513777574233em;
+    line-height: 1.4283813728906054;
+    margin-bottom: .8827882373436318em;
+}
+
+.chassis legend {
+    font-size: 1.272019649514069rem;
+    line-height: 1.354610129921921;
+    margin-bottom: .837195101796658em;
+}
+
+.chassis section, .chassis nav, .chassis form {
+    margin-bottom: 2.237398367265553em;
+}
+
+.chassis nav section, .chassis section nav, .chassis nav nav, .chassis article,
+.chassis fieldset, .chassis figure, .chassis pre, .chassis blockquote,
+.chassis table, .chassis canvas, .chassis embed {
+    margin-bottom: 1.3827882373436318em;
+}
+
+.chassis p {
+    margin-bottom: 1.3827882373436318em;
+}
+
+@media screen and (min-width: 320px) {
+    html.chassis {
+        line-height: 1.5303307232810004;
+    }
+
+    .chassis body {
+        line-height: 1.5303307232810004;
+    }
+
+    .chassis h1 {
+        line-height: 1.3935513166400795;
+        margin-bottom: .861262078750736em;
+    }
+
+    .chassis h2 {
+        line-height: 1.4457964010158681;
+        margin-bottom: .8935513166400796em;
+    }
+
+    .chassis h3 {
+        line-height: 1.5303307232810004;
+        margin-bottom: .9457964010158683em;
+    }
+
+    .chassis h4 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis h5 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis h6 {
+        line-height: 1.667110129921921;
+        margin-bottom: 1.0303307232810004em;
+    }
+
+    .chassis legend {
+        line-height: 1.4457964010158681;
+        margin-bottom: .8935513166400796em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.4761271242968688em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.5303307232810004em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.5303307232810004em;
+        line-height: 1.5303307232810004;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    html.chassis {
+        font-size: 17px;
+        line-height: 1.6357546794957638;
+    }
+
+    .chassis body {
+        line-height: 1.6357546794957638;
+    }
+
+    .chassis h1 {
+        line-height: 1.4338196846856386;
+        margin-bottom: .8861492988743817em;
+    }
+
+    .chassis h2 {
+        line-height: 1.5109519891850727;
+        margin-bottom: .9338196846856384em;
+    }
+
+    .chassis h3 {
+        line-height: 1.6357546794957638;
+        margin-bottom: 1.0109519891850727em;
+    }
+
+    .chassis h4 {
+        line-height: 1.8376896743058888;
+        margin-bottom: 1.1357546794957636em;
+    }
+
+    .chassis h5 {
+        line-height: 1.8376896743058888;
+        margin-bottom: 1.1357546794957636em;
+    }
+
+    .chassis h6 {
+        line-height: 1.8376896743058888;
+        margin-bottom: 1.1357546794957636em;
+    }
+
+    .chassis legend {
+        line-height: 1.5109519891850727;
+        margin-bottom: .9338196846856384em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.646706668680837em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.6357546794957638em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.6357546794957638em;
+        line-height: 1.6357546794957638;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    html.chassis {
+        font-size: 18px;
+        line-height: 1.7170357209177938;
+    }
+
+    .chassis body {
+        line-height: 1.7170357209177938;
+    }
+
+    .chassis h1 {
+        line-height: 1.464866279867866;
+        margin-bottom: .905337149931957em;
+    }
+
+    .chassis h2 {
+        line-height: 1.5611864354248755;
+        margin-bottom: .9648662798678658em;
+    }
+
+    .chassis h3 {
+        line-height: 1.7170357209177938;
+        margin-bottom: 1.0611864354248752em;
+    }
+
+    .chassis h4 {
+        line-height: 1.969205161967722;
+        margin-bottom: 1.217035720917794em;
+    }
+
+    .chassis h5 {
+        line-height: 1.969205161967722;
+        margin-bottom: 1.217035720917794em;
+    }
+
+    .chassis h6 {
+        line-height: 1.969205161967722;
+        margin-bottom: 1.217035720917794em;
+    }
+
+    .chassis legend {
+        line-height: 1.5611864354248755;
+        margin-bottom: .9648662798678658em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.7782221563426694em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.7170357209177938em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.7170357209177938em;
+        line-height: 1.7170357209177938;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    html.chassis {
+        font-size: 19px;
+        line-height: 1.7798450935435028;
+    }
+
+    .chassis body {
+        line-height: 1.7798450935435028;
+    }
+
+    .chassis h1 {
+        line-height: 1.4888573253988295;
+        margin-bottom: .9201644314957388em;
+    }
+
+    .chassis h2 {
+        line-height: 1.600004762519621;
+        margin-bottom: .9888573253988296em;
+    }
+
+    .chassis h3 {
+        line-height: 1.7798450935435028;
+        margin-bottom: 1.1000047625196208em;
+    }
+
+    .chassis h4 {
+        line-height: 2.0708328616881766;
+        margin-bottom: 1.279845093543503em;
+    }
+
+    .chassis h5 {
+        line-height: 2.0708328616881766;
+        margin-bottom: 1.279845093543503em;
+    }
+
+    .chassis h6 {
+        line-height: 2.0708328616881766;
+        margin-bottom: 1.279845093543503em;
+    }
+
+    .chassis legend {
+        line-height: 1.600004762519621;
+        margin-bottom: .9888573253988296em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.8798498560631236em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.7798450935435028em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.7798450935435028em;
+        line-height: 1.7798450935435028;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    html.chassis {
+        font-size: 20px;
+        line-height: 1.8283665448744848;
+    }
+
+    .chassis body {
+        line-height: 1.8283665448744848;
+    }
+
+    .chassis h1 {
+        line-height: 1.5073908706237908;
+        margin-bottom: .9316187923767982em;
+    }
+
+    .chassis h2 {
+        line-height: 1.6299926686256414;
+        margin-bottom: 1.0073908706237906em;
+    }
+
+    .chassis h3 {
+        line-height: 1.8283665448744848;
+        margin-bottom: 1.1299926686256414em;
+    }
+
+    .chassis h4 {
+        line-height: 2.1493422191251788;
+        margin-bottom: 1.3283665448744846em;
+    }
+
+    .chassis h5 {
+        line-height: 2.1493422191251788;
+        margin-bottom: 1.3283665448744846em;
+    }
+
+    .chassis h6 {
+        line-height: 2.1493422191251788;
+        margin-bottom: 1.3283665448744846em;
+    }
+
+    .chassis legend {
+        line-height: 1.6299926686256414;
+        margin-bottom: 1.0073908706237906em;
+    }
+
+    .chassis section, .chassis nav, .chassis form {
+        margin-bottom: 2.9583592135001266em;
+    }
+
+    .chassis nav section, .chassis section nav, .chassis nav nav,
+    .chassis article, .chassis fieldset, .chassis figure, .chassis pre,
+    .chassis blockquote, .chassis table, .chassis canvas, .chassis embed {
+        margin-bottom: 1.8283665448744848em;
+    }
+
+    .chassis p {
+        margin-bottom: 1.8283665448744848em;
+        line-height: 1.8283665448744848;
+    }
+}
+
+.chassis .polymath main > .splash > header nav > a, .chassis a {
+    color: inherit;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    -webkit-text-decoration-color: currentColor;
+            text-decoration-color: currentColor;
+    text-shadow: none;
+    text-transform: none;
+    unicode-bidi: normal;
+    vertical-align: baseline;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+.chassis svg.icon, .chassis button,
+.chassis .polymath main > .splash .hero .toolbar button, .chassis a.button {
+    background: transparent none repeat 0% 0% / auto auto padding-box border-box scroll;
+    border: medium none currentColor;
+    border-radius: 0;
+    -o-border-image: none;
+       border-image: none;
+    color: inherit;
+    margin: 0;
+    opacity: 1;
+    outline: medium none invert;
+    padding: 0;
+    text-align: inherit;
+    text-align-last: auto;
+    text-decoration: none;
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+    -webkit-text-decoration-style: solid;
+            text-decoration-style: solid;
+    -webkit-text-decoration-color: currentColor;
+            text-decoration-color: currentColor;
+    text-indent: 0;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: baseline;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+@media screen and (min-width: 2048px) {
+    .chassis & .row {
+        padding-left: calc(2048px * 6.18 / 100);
+        padding-right: calc(2048px * 6.18 / 100);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .chassis & .row {
+        padding-left: calc(320px * 6.18 / 100);
+        padding-right: calc(320px * 6.18 / 100);
+    }
+}
+
+.chassis a {
+    color: rgb(200, 57, 57);
+}
+
+.chassis a:hover, .chassis a.hover {
+    color: color(rgb(200, 57, 57) lightness(50%));
+    text-decoration: underline;
+}
+
+.chassis a:active {
+    color: color(rgb(200, 57, 57) lightness(44%));
+}
+
+.chassis a:disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgb(188, 189, 193);
+    text-decoration: none;
+}
+
+.chassis svg.icon {
+    width: auto;
+    height: 1.3827882373436318em;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+@media all and (-ms-high-contrast: none) {
+    .chassis button, .chassis button:focus, .chassis button:active,
+    .chassis .polymath main > .splash .hero .toolbar button,
+    .chassis .polymath main > .splash .hero .toolbar button:focus,
+    .chassis .polymath main > .splash .hero .toolbar button:active {
+        background: none;
+        border: none;
+        outline: none;
+        color: inherit;
+    }
+
+    .chassis button span,
+    .chassis .polymath main > .splash .hero .toolbar button span {
+        position: relative;
+    }
+}
+
+.chassis button, .chassis .polymath main > .splash .hero .toolbar button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: .6360098247570346em;
+    padding-right: .9823784767414218em;
+    padding-bottom: .6360098247570346em;
+    padding-left: .9823784767414218em;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: rgb(16, 35, 55);
+    border-radius: .236em;
+    color: white;
+}
+
+.chassis button .icon,
+.chassis .polymath main > .splash .hero .toolbar button .icon {
+    height: calc(1.3827882373436318em - 2px);
+}
+
+.chassis button .left.icon,
+.chassis .polymath main > .splash .hero .toolbar button .left.icon {
+    order: -1;
+    -webkit-transform: translateX(-0.4293858394957214em);
+            transform: translateX(-0.4293858394957214em);
+}
+
+.chassis button .right.icon,
+.chassis .polymath main > .splash .hero .toolbar button .right.icon {
+    order: 99;
+    -webkit-transform: translateX(.4293858394957214em);
+            transform: translateX(.4293858394957214em);
+}
+
+.chassis button.pill,
+.chassis .polymath main > .splash .hero .toolbar button.pill {
+    padding-left: 1.618033988749895em;
+    padding-right: 1.618033988749895em;
+    border-radius: 1.3827882373436318em;
+}
+
+.chassis button svg.icon,
+.chassis .polymath main > .splash .hero .toolbar button svg.icon {
+    stroke: currentColor;
+}
+
+.chassis button:disabled,
+.chassis .polymath main > .splash .hero .toolbar button:disabled {
+    pointer-events: none;
+    opacity: .382;
+}
+
+.chassis button:focus,
+.chassis .polymath main > .splash .hero .toolbar button:focus {
+    outline: 0;
+}
+
+.chassis a.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: .6360098247570346em;
+    padding-right: .9823784767414218em;
+    padding-bottom: .6360098247570346em;
+    padding-left: .9823784767414218em;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    background: rgb(16, 35, 55);
+    border-radius: .236em;
+    color: white;
+}
+
+.chassis a.button .icon {
+    height: calc(1.3827882373436318em - 2px);
+}
+
+.chassis a.button .left.icon {
+    order: -1;
+    -webkit-transform: translateX(-0.4293858394957214em);
+            transform: translateX(-0.4293858394957214em);
+}
+
+.chassis a.button .right.icon {
+    order: 99;
+    -webkit-transform: translateX(.4293858394957214em);
+            transform: translateX(.4293858394957214em);
+}
+
+.chassis a.button.pill {
+    padding-left: 1.618033988749895em;
+    padding-right: 1.618033988749895em;
+    border-radius: 1.3827882373436318em;
+}
+
+.chassis a.button svg.icon {
+    stroke: currentColor;
+}
+
+.chassis a.button:hover, .chassis a.button.hover {
+    color: white;
+    text-decoration: none;
+    text-decoration: initial;
+}
+
+.chassis a.button:active {
+    color: white;
+}
+
+.chassis a.button:disabled {
+    pointer-events: none;
+    opacity: .382;
+    color: white;
+    text-decoration: none;
+    text-decoration: initial;
+}
+
+.chassis a.button:focus {
+    outline: 0;
+}
+
+.chassis .polymath {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.chassis .polymath h2 {
+    font-size: 1.618033988749895rem;
+    font-weight: bold;
+}
+
+.chassis .polymath h3 {
+    font-weight: bold;
+    color: rgb(68, 68, 68);
+}
+
+.chassis .polymath .text-bold {
+    font-weight: bold;
+}
+
+.chassis .polymath .text-light {
+    font-weight: 300;
+}
+
+.chassis .polymath > header {
+    padding-top: .6360098247570346em;
+    padding-bottom: .6360098247570346em;
+    background: black;
+    display: none;
+}
+
+.chassis .polymath > header .width.constraint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chassis .polymath > footer {
+    flex: 0 0 auto;
+}
+
+.chassis .polymath > footer .social {
+    margin: 0;
+    padding: 1.18em 0;
+    background: hsl(0, 56.5217391304%, 23.6%);
+}
+
+.chassis .polymath > footer .social nav {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.chassis .polymath > footer .social nav a {
+    display: block;
+    margin: 0 .9823784767414218em;
+    text-decoration: none;
+    opacity: .8;
+}
+
+.chassis .polymath > footer .social nav a:hover {
+    opacity: 1;
+}
+
+.chassis .polymath > footer .social nav a:first-child {
+    margin-left: 0;
+}
+
+.chassis .polymath > footer .social nav a:last-child {
+    margin-right: 0;
+}
+
+.chassis .polymath > footer .legal {
+    margin: 0;
+    padding: 3.82em 0;
+    background: rgb(44, 45, 48);
+    font-size: .7861513777574233rem;
+    font-weight: 300;
+}
+
+.chassis .polymath > footer .legal .width.constraint {
+    text-align: center;
+}
+
+.chassis .polymath > footer .legal .copyright {
+    padding-top: .6360098247570346em;
+    padding-bottom: .6360098247570346em;
+    color: rgb(148, 149, 153);
+}
+
+.chassis .polymath > footer .legal nav {
+    display: flex;
+    justify-content: center;
+}
+
+.chassis .polymath > footer .legal nav a {
+    margin: 0 .9823784767414218em;
+    color: white;
+}
+
+.chassis .polymath > footer .legal nav a:first-child {
+    margin-left: 0;
+}
+
+.chassis .polymath > footer .legal nav a:last-child {
+    margin-right: 0;
+}
+
+.chassis .polymath main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chassis .polymath main > .content {
+    margin: 0;
+    padding: 6.18vh 0;
+    font-weight: 300;
+    letter-spacing: .0382em;
+}
+
+.chassis .polymath main > .content .width.constraint {
+    max-width: 1200px;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .content {
+        padding: 11.8vh 0;
+    }
+
+    .chassis .polymath main > .content .content {
+        font-size: .7861513777574233rem;
+    }
+}
+
+.chassis .polymath main h2 {
+    text-align: center;
+}
+
+.chassis .polymath main > .splash {
+    position: relative;
+}
+
+.chassis .polymath main > .splash > header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.chassis .polymath main > .splash > header .width.constraint {
+    text-align: center;
+}
+
+.chassis .polymath main > .splash > header .logo {
+    position: relative;
+    z-index: 1;
+    -webkit-transform: translate(0, 50%);
+            transform: translate(0, 50%);
+    flex: 0 0 auto;
+    min-width: 150px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgb(16, 35, 55);
+    border-radius: .382em;
+    font-size: .7861513777574233rem;
+    text-align: center;
+    color: white;
+}
+
+.chassis .polymath main > .splash > header .logo svg {
+    display: block;
+    max-width: 100%;
+    background: white;
+    padding: 1.618em;
+    fill: rgb(16, 35, 55);
+}
+
+.chassis .polymath main > .splash > header .logo .location {
+    padding-top: .6360098247570346em;
+    padding-right: .9823784767414218em;
+    padding-bottom: .6360098247570346em;
+    padding-left: .9823784767414218em;
+    border-top: 2px solid rgb(16, 35, 55);
+    letter-spacing: .118em;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .splash > header .logo {
+        -webkit-transform: none;
+                transform: none;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main > .splash > header .logo {
+        top: 3.82em;
+        box-shadow: 0 0 23.6em 0 rgba(0, 41, 62, .618);
+    }
+}
+
+.chassis .polymath main > .splash > header nav {
+    position: relative;
+    z-index: 2;
+    flex: 1 1 38.2%;
+    display: none;
+    justify-content: space-around;
+    font-size: .7861513777574233rem;
+}
+
+.chassis .polymath main > .splash > header nav > a {
+    color: white;
+    text-transform: uppercase;
+}
+
+.chassis .polymath main > .splash > header nav > a:hover,
+.chassis .polymath main > .splash > header nav > a.hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .chassis .polymath main > .splash > header nav {
+        display: inline-block;
+        padding-top: .6360098247570346em;
+        padding-bottom: .6360098247570346em;
+    }
+
+    .chassis .polymath main > .splash > header nav a {
+        margin: 0 .9823784767414218em;
+    }
+
+    .chassis .polymath main > .splash > header nav a:hover {
+        text-decoration: underline;
+    }
+
+    .chassis .polymath main > .splash > header nav.left a:first-child {
+        margin-left: 0;
+    }
+
+    .chassis .polymath main > .splash > header nav.right a:last-child {
+        margin-right: 0;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main > .splash > header nav {
+        display: flex;
+        margin: 4.36em 0 0;
+    }
+
+    .chassis .polymath main > .splash > header nav a {
+        padding-top: .6360098247570346em;
+        padding-right: .9823784767414218em;
+        padding-bottom: .6360098247570346em;
+        padding-left: .9823784767414218em;
+        color: black;
+    }
+
+    .chassis .polymath main > .splash > header nav.left {
+        order: -1;
+    }
+
+    .chassis .polymath main > .splash > header nav.right {
+        order: 99;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .splash > header {
+        padding-top: 3.82em;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main > .splash > header {
+        position: static;
+        background: white;
+        padding-top: 0;
+    }
+
+    .chassis .polymath main > .splash > header .width.constraint {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.chassis .polymath main > .splash .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 8em 0 3.82em;
+    background: linear-gradient(rgb(72, 105, 138) 2.36%, transparent 100%),
+                radial-gradient(ellipse at center, rgba(214, 214, 214, 0) 0%, rgba(0, 0, 0, .38) 50%, rgba(255, 255, 255, 0) 100%);
+    color: white;
+}
+
+.chassis .polymath main > .splash .hero .slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgb(16, 35, 55);
+}
+
+.chassis .polymath main > .splash .hero .slider .slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center center;
+    background-size: cover;
+}
+
+.chassis .polymath main > .splash .hero .tagline {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.82vh;
+}
+
+.chassis .polymath main > .splash .hero .tagline .width.constraint {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.chassis .polymath main > .splash .hero .tagline .line {
+    text-shadow: 0 0 .618em black;
+    text-align: center;
+}
+
+.chassis .polymath main > .splash .hero .tagline .line.main {
+    margin-bottom: calc(1em / 2);
+    font-size: 2.618033988749895rem;
+    line-height: normal;
+}
+
+.chassis .polymath main > .splash .hero .tagline .line.main span {
+    line-height: normal;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .chassis .polymath main > .splash .hero .tagline .line.main {
+        font-size: 3.6181229724523547rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .chassis .polymath main > .splash .hero .tagline .line.main {
+        font-size: 4.23597899379733rem;
+    }
+}
+
+.chassis .polymath main > .splash .hero .tagline .line.secondary {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: .236em;
+}
+
+@media screen and (min-width: 768px) {
+    .chassis .polymath main > .splash .hero .tagline .line.secondary {
+        font-size: 1.272019649514069rem;
+    }
+}
+
+.chassis .polymath main > .splash .hero .toolbar {
+    margin: 0;
+}
+
+.chassis .polymath main > .splash .hero .toolbar .width.constraint {
+    display: flex;
+    justify-content: center;
+}
+
+.chassis .polymath main > .splash .hero .toolbar button {
+    opacity: .8;
+    box-shadow: inset 0 0 0 2px hsl(210.76923076923077, 54.9295774648%, 61.8%),
+                0 0 2em 1em rgba(0, 0, 0, .1618);
+}
+
+.chassis .polymath main > .splash .hero .toolbar button:hover,
+.chassis .polymath main > .splash .hero .toolbar button.hover {
+    opacity: 1;
+    box-shadow: inset 0 0 0 2px white, 0 0 2em 1em rgba(0, 0, 0, .236);
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main > .splash .hero {
+        padding-top: 11.8em;
+    }
+}
+
+.chassis .polymath main .intro {
+    padding-top: 6.18em;
+    color: hsl(0, 0%, 50%);
+}
+
+.chassis .polymath main .intro h2 {
+    text-align: left;
+}
+
+.chassis .polymath main .intro .width.constraint .column.welcome {
+    flex: 1 1 75%;
+}
+
+.chassis .polymath main .intro .width.constraint .column.welcome h2 {
+    color: rgb(68, 68, 68);
+}
+
+.chassis .polymath main .intro .width.constraint .column.welcome > *:last-child {
+    margin-bottom: 0;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications h3 {
+    display: none;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications a {
+    display: inline-block;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications a img {
+    display: block;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications .mastered-for-itunes {
+    display: flex;
+    align-items: center;
+    font-size: .7861513777574233rem;
+}
+
+.chassis .polymath main .intro .width.constraint .column .certifications .mastered-for-itunes img {
+    max-height: 3.82em;
+    margin-right: 1em;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info {
+    flex: 1 1 25%;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info h3 {
+    color: rgb(68, 68, 68);
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info .services ul {
+    margin-bottom: 1em;
+    list-style-type: disc;
+}
+
+.chassis .polymath main .intro .width.constraint .column.info .services ul li {
+    margin-left: 1em;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .intro .width.constraint .column {
+        margin: 0;
+    }
+
+    .chassis .polymath main .intro .width.constraint .column:last-child {
+        margin-left: 11.8%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .intro .width.constraint {
+        display: flex;
+    }
+}
+
+.chassis .polymath main .gallery {
+    height: 44vh;
+    min-height: 23.6em;
+    padding: 2.36em 0;
+    background: black;
+    color: white;
+}
+
+.chassis .polymath main .gallery .width.constraint {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.chassis .polymath main .gallery button {
+    position: absolute;
+    z-index: 2;
+    padding: 2.36em 0;
+    opacity: .618;
+    background: black;
+}
+
+.chassis .polymath main .gallery button svg {
+    stroke: white;
+    stroke-linecap: square;
+    height: 2.36em;
+    width: 2.36em;
+    border-radius: .236em;
+}
+
+.chassis .polymath main .gallery button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.chassis .polymath main .gallery button.previous {
+    left: 3.82%;
+}
+
+.chassis .polymath main .gallery button.next {
+    right: 3.82%;
+}
+
+.chassis .polymath main .gallery ol {
+    list-style-type: decimal;
+}
+
+.chassis .polymath main .gallery ol li {
+    margin-left: 1em;
+}
+
+.chassis .polymath main .gallery ol li h3 {
+    color: currentColor;
+}
+
+.chassis .polymath main .gallery .content {
+    z-index: 2;
+}
+
+.chassis .polymath main .gallery .slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(16, 35, 55);
+}
+
+.chassis .polymath main .gallery .slider .slide {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .gallery {
+        height: 88vh;
+    }
+
+    .chassis .polymath main .gallery .width.constraint {
+        padding-left: 38.2%;
+    }
+}
+
+.chassis .polymath main .gear .content li {
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .gear .content .row {
+        display: flex;
+        width: 100%;
+        min-width: 320px;
+        max-width: 2048px;
+        margin: 0 auto;
+        padding-left: 6.18em;
+        padding-right: 6.18em;
+    }
+
+    .chassis .polymath main .gear .content .row > section {
+        flex: 0 0 50%;
+        text-align: center;
+    }
+
+    .chassis .polymath main .gear .content .row > section:first-of-type {
+        margin-right: 3.09%;
+    }
+
+    .chassis .polymath main .gear .content .row > section:last-of-type {
+        margin-left: 3.09%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .chassis .polymath main .gear .row > section.collapsible {
+        margin: 0;
+        border-bottom: 1px solid rgb(209, 210, 212);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3 {
+        display: flex;
+        margin: 0;
+        padding-top: .6360098247570346em;
+        padding-right: .9823784767414218em;
+        padding-bottom: .6360098247570346em;
+        padding-left: .9823784767414218em;
+        cursor: pointer;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3 .icon {
+        margin-right: .32410192262448956em;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible h3:hover {
+        background: rgb(237, 237, 237);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible .down.icon {
+        display: none;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible ul {
+        display: none;
+        margin-top: 1em;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible ul li {
+        padding-left: calc(1.3827882373436318em + .32410192262448956em + .9823784767414218em);
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open .icon.down {
+        display: block;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open .icon.right {
+        display: none;
+    }
+
+    .chassis .polymath main .gear .row > section.collapsible.open ul {
+        display: block;
+    }
+
+    .chassis .polymath main .gear .row:last-of-type > section.collapsible:last-child {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .gear {
+        padding-bottom: 0;
+    }
+
+    .chassis .polymath main .gear h3 .icon {
+        display: none;
+    }
+}
+
+.chassis .polymath main .testimonials {
+    background: rgb(16, 35, 55);
+    color: white;
+}
+
+.chassis .polymath main .testimonials .yelp-review {
+    min-width: 0 !important;
+}
+
+@media screen and (max-width: 512px) {
+    .chassis .polymath main .testimonials .width.constraint {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .chassis .polymath main .testimonials .review {
+        margin-bottom: 1em;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .chassis .polymath main .testimonials .content {
+        display: flex;
+    }
+
+    .chassis .polymath main .testimonials .content .review {
+        flex: 1 1 calc(100% / 3);
+        padding: 0 .9823784767414218em;
+    }
+
+    .chassis .polymath main .testimonials .content .review:first-of-type {
+        padding-left: 0;
+    }
+
+    .chassis .polymath main .testimonials .content .review:last-of-type {
+        padding-right: 0;
+    }
+}
+
+.chassis .polymath main > .contact {
+    padding: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
